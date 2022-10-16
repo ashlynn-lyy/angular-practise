@@ -1,0 +1,41 @@
+mat-card {
+    margin: 0em 1em 2em 0em;
+    text-align: center;
+    width: 500px;
+}
+
+mat-card-title {
+    font-size: large;
+    padding: 1em 1em 1em 0em;
+}
+
+mat-checkbox {
+    padding: 1em;
+}
+
+mat-card-content {
+    font-size: medium;
+}
+
+.mat-raised-button {
+    background-color: #00ADB5;
+    color: white;
+}
+
+.mat-button {
+    color: #00ADB5;
+    background-color: white;
+}
+
+ul{
+    margin: 0em 2em;
+    padding: 0px;
+    list-style-type: none;
+    background-color: #393E46;
+    overflow: auto;
+}
+
+li {
+    margin: 1em 2em 1em 2em;
+    color: #EEEEEE;
+}

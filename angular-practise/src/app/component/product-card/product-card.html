@@ -1,0 +1,34 @@
+<div fxLayout="row">
+<ul fxFlex="25">
+  <div style="display: flex;  justify-content: space-between; padding: 1em 1em 0em 0em;">
+    <li><b style="font-size: large;">Selected Items</b></li>
+    <button mat-button (click)="clearAll()">Clear all</button>
+  </div>
+  
+  <li *ngFor="let item of products; let i = index;">
+    <p *ngIf="selected[i]">-&emsp;{{item.name}}</p>
+  </li>
+</ul>
+
+<div fxFlex>
+  <div fxLayout="row wrap" >
+    <div *ngFor="let item of products; let i = index;">
+      <mat-card>
+        <div style="text-align: right">
+          <mat-checkbox [(ngModel)]="selected[i]">Selected</mat-checkbox>
+        </div>
+        <img mat-card-xl-image *ngIf="item.images" src={{item.images[0].url}} alt={{item.code}}/>
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-actions>
+          <button mat-raised-button (click)="showPreview(i)">Preview</button>
+          <button mat-raised-button (click)="showDetail(i)">Details</button>
+        </mat-card-actions>
+        <mat-card-content *ngIf="preview[i]">
+          <p>{{item.code}}</p>
+          <p>{{item.price?.currencyIso}} {{item.price?.formattedValue}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+</div>
